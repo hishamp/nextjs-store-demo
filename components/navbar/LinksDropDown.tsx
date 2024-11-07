@@ -13,6 +13,7 @@ import UserIcon from "./UserIcon";
 import { SignedIn, SignedOut, SignInButton, SignUpButton } from "@clerk/nextjs";
 import SignOutLink from "./SignOutLink";
 import { auth } from "@clerk/nextjs/server";
+import AdminLogin from "./AdminLogin";
 
 const LinksDropDown = () => {
   const { userId } = auth();
@@ -37,6 +38,9 @@ const LinksDropDown = () => {
             <SignUpButton mode="modal">
               <button className="w-full text-left">Register</button>
             </SignUpButton>
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            <AdminLogin />
           </DropdownMenuItem>
         </SignedOut>
         <SignedIn>
